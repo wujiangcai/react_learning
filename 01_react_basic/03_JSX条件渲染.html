@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_JSx基本语法</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- CDN引入，依赖三个包：react、react-dom、babel -->
+    <script src="../01_react_basic/lib/react.js"></script>
+    <script src="../01_react_basic/lib/react-dom.js"></script>
+    <script src="../01_react_basic/lib/babel.js"></script>
+
+    <script type="text/babel">
+      const title = "哪吒闹海";
+      const msg = "zhangsan";
+      const n = 10;
+      const imgUrl =
+        "https://public-cdn-oss.mosoteach.cn/avatar/2023/2E/e37ec338466725ce05a5007f958fae99.jpg?v=1693560293&x-oss-process=style/s300x300";
+      const href = "http://www.baidu.com";
+      const objStyle = { color: "red", fontSize: "30px" };
+      let element = null;
+      const isReady = true;
+      //   if (isReady) {
+      //     element = <h2>准备开始比赛吧</h2>;
+      //   } else {
+      //     element = <h2>提前做好准备吧</h2>;
+      //   }
+      element = (
+        <div>{isReady ? <button>开始战斗</button> : <h3>赶紧准备</h3>} </div>
+      );
+
+      const root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(element);
+    </script>
+  </body>
+</html>

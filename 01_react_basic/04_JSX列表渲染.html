@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_JSx基本语法</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- CDN引入，依赖三个包：react、react-dom、babel -->
+    <script src="../01_react_basic/lib/react.js"></script>
+    <script src="../01_react_basic/lib/react-dom.js"></script>
+    <script src="../01_react_basic/lib/babel.js"></script>
+
+    <script type="text/babel">
+      const students = [
+        { id: 111, name: "三丰", score: 90 },
+        { id: 112, name: "张三丰", score: 95 },
+        { id: 113, name: "张三风", score: 89 },
+        { id: 114, name: "张三凤", score: 92 },
+      ];
+      const element = (
+        <div>
+          <h2>学生列表数据</h2>
+          <div className="item">
+            {students
+              .filter((item) => item.score > 90)
+              .map((item) => {
+                return (
+                  <div className="item" key={item.id}>
+                    <h2>学号:{item.id}</h2>
+                    <h2>学号:{item.name}</h2>
+                    <h2>学号:{item.score}</h2>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      );
+      const root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(element);
+    </script>
+  </body>
+</html>

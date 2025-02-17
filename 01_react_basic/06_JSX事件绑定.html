@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_JSx基本语法</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- CDN引入，依赖三个包：react、react-dom、babel -->
+    <script src="../01_react_basic/lib/react.js"></script>
+    <script src="../01_react_basic/lib/react-dom.js"></script>
+    <script src="../01_react_basic/lib/babel.js"></script>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      const App = () => {
+        const [message, setMessage] = useState("Hello World");
+
+        const btnClick = () => {
+          setMessage("Hello React");
+        };
+
+        return (
+          <div>
+            <h2>{message}</h2>
+            <button onClick={btnClick}>修改文本</button>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_JSx基本语法</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- CDN引入，依赖三个包：react、react-dom、babel -->
+    <script src="../01_react_basic/lib/react.js"></script>
+    <script src="../01_react_basic/lib/react-dom.js"></script>
+    <script src="../01_react_basic/lib/babel.js"></script>
+
+    <script type="text/babel">
+      const taskList = [
+        { id: 1, name: "吃饭", completed: true },
+        { id: 2, name: "睡觉", completed: false },
+        { id: 3, name: "敲代码", completed: false },
+      ];
+
+      // 统计未完成的任务数
+      const incompleteCount = taskList.filter((task) => !task.completed).length;
+
+      const element = (
+        <div>
+          <h2>任务列表</h2>
+          <p>未完成的任务数: {incompleteCount}</p>
+          <div>
+            {taskList.map((task) => (
+              <div
+                key={task.id}
+                className={`task-item ${
+                  task.completed ? "completed" : "incomplete"
+                }`}
+              >
+                {task.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+      const root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(element);
+    </script>
+  </body>
+</html>
