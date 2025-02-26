@@ -1,0 +1,84 @@
+/* 修改后的 nav-bar 样式 */
+.nav-bar {
+  width: 100%;
+  height: 100%; /* 高度改为 100% 使其占据父容器的全部高度 */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* 改为垂直方向的布局 */
+}
+
+.navtop {
+  background-color: red;
+  height: 20%; /* 设置高度为父容器的 20% */
+}
+
+.navcenter {
+  background-color: green;
+  flex: 1; /* 中间部分占据剩余空间 */
+}
+
+.navfoot {
+  background-color: blue;
+  height: 20%; /* 设置高度为父容器的 20% */
+}
+/* 卡片的整体容器 */
+.card {
+  background-color: #fff; /* 白色背景 */
+  border-radius: 10px; /* 圆角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+  overflow: hidden; /* 防止内容溢出圆角边界 */
+  transition: all 0.3s ease; /* 过渡效果 */
+  margin: 20px; /* 外边距 */
+  padding: 20px; /* 内边距 */
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* 鼠标悬停时加大阴影 */
+  transform: translateY(-5px); /* 鼠标悬停时稍微上移 */
+}
+
+/* 卡片头部样式 */
+.card-header {
+  font-size: 1.25rem; /* 设置字体大小 */
+  font-weight: bold; /* 设置加粗 */
+  color: #333; /* 深灰色文字 */
+  margin-bottom: 12px; /* 下边距 */
+  border-bottom: 2px solid #f0f0f0; /* 下边框 */
+  padding-bottom: 10px;
+}
+
+/* 卡片主体内容样式 */
+.card-body {
+  font-size: 1rem;
+  color: #555; /* 中等灰色文字 */
+  line-height: 1.5; /* 行间距 */
+  margin-bottom: 12px; /* 下边距 */
+}
+
+/* 卡片尾部样式 */
+.card-footer {
+  font-size: 0.875rem; /* 设置较小的字体 */
+  color: #777; /* 浅灰色文字 */
+  text-align: right; /* 右对齐 */
+  border-top: 1px solid #f0f0f0; /* 上边框 */
+  padding-top: 10px;
+}
+
+/* 响应式设计，确保卡片在小屏幕上显示良好 */
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+  }
+
+  .card-header {
+    font-size: 1.1rem;
+  }
+
+  .card-body {
+    font-size: 0.95rem;
+  }
+
+  .card-footer {
+    font-size: 0.8rem;
+  }
+}
