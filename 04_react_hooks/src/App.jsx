@@ -87,7 +87,7 @@ const App = () => {
       {/* <App1 /> */}
 
       {/* 调试API请求 */}
-      <App2 />
+      {/* <App2 /> */}
 
       {/* useFetch自定义Hook */}
       {/* <Data /> */}

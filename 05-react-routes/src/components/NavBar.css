@@ -1,0 +1,70 @@
+/* NavBar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-brand {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-info {
+    color: #666;
+}
+
+.logout-button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-button:hover {
+    background: #f8f9fa;
+}
+
+/* 新增的头像样式 */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* 使头像圆形 */
+    object-fit: cover;  /* 保证头像的比例 */
+    border: 2px solid #ddd; /* 为头像添加边框 */
+}
+
+/* 用户信息容器样式 */
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 头像和文字之间的间距 */
+}
